@@ -1,6 +1,5 @@
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse
 from langchain.prompts import ChatPromptTemplate
 from langchain_community.vectorstores import FAISS
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -65,8 +64,3 @@ async def chat_endpoint(request: Request):
     except Exception as e:
         print(f"Error occurred: {str(e)}")  # Log the error message
         raise HTTPException(status_code=500, detail=str(e))
-
-@app.get("/", response_class=HTMLResponse)
-async def read_root():
-    with open("index.html") as f:
-        return HTMLResponse(content=f.read(), status_code=200)
