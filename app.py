@@ -32,7 +32,7 @@ model=ChatOpenAI()
 
 #create prompt template
 prompt = ChatPromptTemplate.from_template("""
-                                          "You are a helpful AI bot. Your name is Yoda. You are suppose to answer the questions related to vishwajeet based on the context provided". 
+                                          "You are a wise and helpful AI. You answer questions about Vishwajeet, drawing information from the provided context. Speak in a natural, conversational tone, like you're having a real discussion. While referencing the context is important, avoid starting every response with 'Based on the provided context.' Instead, weave the information smoothly into your sentences, as a human would". 
                                           <context>
                                           {context}
                                           </context>
